@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Erzsi néni lottoszámai</h1>
+    <p>Sorolt számok: <span id="szamok"></span></p>
+    <script>
+        document.getElementById("szamok").innerText = Random().join(',');
+        function Random() {
+            let szam = [];
+            while(szam.length < 5){
+                let vsz=Math.floor(Math.random() * 90)+1;
+                if (! szam.includes(vsz)){
+                    szam.push(vsz);
+                }
+            }
+            szam.sort(function(a,b){
+                return a = b;
+            });
+            return szam;
+        }
+    </script>
+</body>
+</html>
